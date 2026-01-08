@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
-      
+
       {/* Floating Particles */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
@@ -55,7 +55,7 @@ const HeroSection = () => {
             >
               {personalInfo.name}
             </motion.h1>
-            
+
             <motion.div
               className="text-2xl lg:text-3xl text-purple-200 mb-4"
               initial={{ opacity: 0, y: 30 }}
@@ -64,7 +64,7 @@ const HeroSection = () => {
             >
               {personalInfo.title}
             </motion.div>
-            
+
             <motion.div
               className="text-lg text-purple-100 mb-8"
               initial={{ opacity: 0, y: 30 }}
@@ -73,17 +73,17 @@ const HeroSection = () => {
             >
               {personalInfo.university} • {personalInfo.year}
             </motion.div>
-            
+
             <motion.p
               className="text-gray-300 mb-8 text-lg"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              {personalInfo.experience} of development experience • Passionate about solving real-world problems • 
+              {personalInfo.experience} of development experience • Passionate about solving real-world problems •
               Currently focused on {personalInfo.focus}
             </motion.p>
-            
+
             <motion.div
               className="flex gap-4"
               initial={{ opacity: 0, y: 30 }}
@@ -107,8 +107,6 @@ const HeroSection = () => {
               </Button>
             </motion.div>
           </motion.div>
-          
-          {/* Profile Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -118,19 +116,20 @@ const HeroSection = () => {
             <div className="relative w-80 h-80 mx-auto lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-purple-400/30">
-                <Image
-                  src="/images/natanimage.jpg"
-                  alt={personalInfo.name}
-                  fill
-                  className="object-cover"
-                  priority
-                />
+              <Image
+  src="/images/natanimages.jpg"
+  alt={personalInfo.name}
+  fill
+  className="object-cover"
+  priority
+/>
+
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-      
+
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
