@@ -63,32 +63,36 @@ const AboutSection = () => {
           >
             <Card className="p-8 bg-white shadow-lg border-slate-200">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Hi, I'm {personalInfo.name}
+                Hi, Im personalInfo.name
               </h3>
               <div className="space-y-4 text-slate-600">
                 <p className="text-lg leading-relaxed">
-                  I'm a {personalInfo.year}-year Software Engineering student at {personalInfo university}, 
+                  Im a {personalInfo.year}-year Software Engineering student at {personalInfo.university},
                   passionate about building innovative software solutions that make a real impact.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  With {personalInfo.experience} of development experience, I've worked across various 
-                  technologies and domains, from web development to software testing and now focusing on 
+                  With {personalInfo.experience} of development experience, Ive worked across various
+                  technologies and domains, from web development to software testing and now focusing on
                   {personalInfo.focus}.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  I thrive in collaborative environments and love solving complex problems through 
+                  I thrive in collaborative environments and love solving complex problems through
                   clean, efficient code and thoughtful design.
                 </p>
               </div>
-              
+
               {/* Key Highlights */}
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-600">{personalInfo.experience}</div>
+                  <div className="text-2xl font-bold text-purple-600">
+                    {personalInfo.experience}
+                  </div>
                   <div className="text-sm text-slate-600">Years Experience</div>
                 </div>
                 <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-600">{personalInfo.year}</div>
+                  <div className="text-2xl font-bold text-purple-600">
+                    {personalInfo.year}
+                  </div>
                   <div className="text-sm text-slate-600">Education Level</div>
                 </div>
               </div>
@@ -104,7 +108,7 @@ const AboutSection = () => {
             className="relative"
           >
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-purple-200"></div>
-            
+
             {timelineEvents.map((event, index) => (
               <motion.div
                 key={index}
@@ -114,20 +118,26 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 className="relative mb-8 last:mb-0"
               >
-                <div className={`absolute left-6 w-5 h-5 rounded-full border-4 border-white ${
-                  event.highlight ? 'bg-purple-600' : 'bg-purple-400'
-                }`}></div>
-                
+                <div
+                  className={`absolute left-6 w-5 h-5 rounded-full border-4 border-white ${
+                    event.highlight ? 'bg-purple-600' : 'bg-purple-400'
+                  }`}
+                ></div>
+
                 <div className="ml-16">
-                  <Card className={`p-4 ${
-                    event.highlight 
-                      ? 'bg-purple-50 border-purple-200 shadow-md' 
-                      : 'bg-white border-slate-200'
-                  }`}>
+                  <Card
+                    className={`p-4 ${
+                      event.highlight
+                        ? 'bg-purple-50 border-purple-200 shadow-md'
+                        : 'bg-white border-slate-200'
+                    }`}
+                  >
                     <div className="flex items-center gap-3 mb-2">
-                      <span className={`text-sm font-semibold ${
-                        event.highlight ? 'text-purple-600' : 'text-slate-500'
-                      }`}>
+                      <span
+                        className={`text-sm font-semibold ${
+                          event.highlight ? 'text-purple-600' : 'text-slate-500'
+                        }`}
+                      >
                         {event.year}
                       </span>
                       {event.highlight && (
@@ -139,9 +149,7 @@ const AboutSection = () => {
                     <h4 className="text-lg font-semibold text-slate-900 mb-1">
                       {event.title}
                     </h4>
-                    <p className="text-slate-600">
-                      {event.description}
-                    </p>
+                    <p className="text-slate-600">{event.description}</p>
                   </Card>
                 </div>
               </motion.div>
