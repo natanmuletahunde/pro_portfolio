@@ -18,7 +18,7 @@ const Footer = () => {
           >
             <h3 className="text-xl font-bold text-white mb-4">Natan Muleta</h3>
             <p className="text-sm leading-relaxed">
-              Software Engineering student passionate about building innovative solutions 
+              Software Engineering student passionate about building innovative solutions
               and creating impactful digital experiences.
             </p>
           </motion.div>
@@ -55,25 +55,20 @@ const Footer = () => {
           >
             <h3 className="text-xl font-bold text-white mb-4">Connect</h3>
             <div className="space-y-2">
-              <a 
+              <a
                 href="mailto:natanmuleta77@gmail.com"
                 className="block text-sm hover:text-purple-400 transition-colors"
               >
                 natanmuleta77@gmail.com
               </a>
               <div className="flex gap-3 justify-end">
-                <a 
-                  href="#" 
+                <a
+                  href="https://github.com/natanmuletahunde"
                   className="text-sm hover:text-purple-400 transition-colors"
                 >
                   GitHub
                 </a>
-                <a 
-                  href="#" 
-                  className="text-sm hover:text-purple-400 transition-colors"
-                >
-                  LinkedIn
-                </a>
+
               </div>
             </div>
           </motion.div>
