@@ -1,11 +1,60 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { projects } from '@/lib/constants';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Code } from 'lucide-react';
+
+/* =========================
+   PROJECT DATA (NATAN)
+========================= */
+const projects = [
+  {
+    title: 'Doctor Appointment Platform',
+    type: 'Full-stack',
+    description:
+      'A modern doctor appointment platform enabling patients to register, book, and manage appointments while doctors oversee schedules. Features SMS reminders, admin OTP login, and production-grade monitoring.',
+    tech: [
+      'Next.js',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Appwrite',
+      'Twilio',
+      'Sentry',
+    ],
+    github: 'https://github.com/natanmuletahunde/Dr_appointment_with_SMSnextjs.git',
+    live: 'https://dr-appointment-with-smsnextjs-4.onrender.com/',
+  },
+  {
+    title: 'Video Meet App',
+    type: 'Full-stack',
+    description:
+      'A real-time video conferencing application with personal meeting rooms, instant calls, and scheduled sessions. Built with modern authentication and a sleek, responsive UI.',
+    tech: [
+      'Next.js',
+      'Stream Video SDK',
+      'Clerk',
+      'Tailwind CSS',
+    ],
+    github: 'https://github.com/natanmuletahunde/video-meet-app_next.js.git',
+    live: 'https://video-meet-app-next-js-1.onrender.com/',
+  },
+  {
+    title: 'AI-Converso (SaaS)',
+    type: 'AI/ML',
+    description:
+      'A modern SaaS platform offering real-time AI conversations, secure authentication, and intelligent AI companions. Designed for scalability and seamless user experience.',
+    tech: [
+      'Next.js',
+      'Tailwind CSS',
+      'AI APIs',
+      'SaaS Architecture',
+    ],
+    github: 'https://github.com/natanmuletahunde/Saas_Converso_teaching.git',
+    live: 'https://saas-converso-teaching-5.onrender.com',
+  },
+];
 
 const ProjectsSection = () => {
   const getProjectColor = (type: string) => {
@@ -14,8 +63,6 @@ const ProjectsSection = () => {
         return 'from-blue-500 to-cyan-500';
       case 'AI/ML':
         return 'from-purple-500 to-pink-500';
-      case 'Full-stack & Testing':
-        return 'from-green-500 to-emerald-500';
       default:
         return 'from-slate-500 to-slate-600';
     }
@@ -27,17 +74,18 @@ const ProjectsSection = () => {
         return '🌐';
       case 'AI/ML':
         return '🤖';
-      case 'Full-stack & Testing':
-        return '🧪';
       default:
         return '💻';
     }
   };
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-white to-slate-50">
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-b from-white to-slate-50"
+    >
       <div className="max-w-6xl mx-auto px-4">
-        {/* Section Header */}
+        {/* ================= HEADER ================= */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,12 +97,12 @@ const ProjectsSection = () => {
             Projects Showcase
           </h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            A selection of my notable projects demonstrating full-stack development, 
-            AI applications, and comprehensive testing solutions
+            High-impact projects focused on full-stack engineering, AI-powered
+            systems, and real-world problem solving
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* ================= PROJECTS GRID ================= */}
         <div className="grid lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
@@ -67,29 +115,34 @@ const ProjectsSection = () => {
               className="group"
             >
               <Card className="h-full bg-white shadow-lg border-slate-200 overflow-hidden hover:shadow-2xl transition-all duration-300">
-                {/* Project Header */}
-                <div className={`h-2 bg-gradient-to-r ${getProjectColor(project.type)}`}></div>
-                
+                {/* Gradient Top */}
+                <div
+                  className={`h-2 bg-gradient-to-r ${getProjectColor(
+                    project.type
+                  )}`}
+                />
+
                 <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg bg-gradient-to-r ${getProjectColor(project.type)} bg-opacity-10`}>
-                        {getProjectIcon(project.type)}
-                      </div>
-                      <div className="flex-1">
-                        <CardTitle className="text-xl text-slate-900 group-hover:text-purple-600 transition-colors">
-                          {project.title}
-                        </CardTitle>
-                        <Badge variant="secondary" className="mt-1 bg-slate-100 text-slate-600">
-                          {project.type}
-                        </Badge>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <div
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg bg-gradient-to-r ${getProjectColor(
+                        project.type
+                      )}`}
+                    >
+                      {getProjectIcon(project.type)}
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl text-slate-900 group-hover:text-purple-600 transition-colors">
+                        {project.title}
+                      </CardTitle>
+                      <Badge className="mt-1 bg-slate-100 text-slate-600">
+                        {project.type}
+                      </Badge>
                     </div>
                   </div>
                 </CardHeader>
 
-                <CardContent className="pt-0">
-                  {/* Project Description */}
+                <CardContent>
                   <p className="text-slate-600 mb-6 leading-relaxed">
                     {project.description}
                   </p>
@@ -101,45 +154,49 @@ const ProjectsSection = () => {
                       Tech Stack
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <motion.div
-                          key={techIndex}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ 
-                            duration: 0.3, 
-                            delay: (index * 0.2) + (techIndex * 0.05) 
-                          }}
-                          viewport={{ once: true }}
-                          whileHover={{ scale: 1.1 }}
+                      {project.tech.map((tech, i) => (
+                        <Badge
+                          key={i}
+                          variant="outline"
+                          className="bg-slate-50 border-slate-300 text-slate-700"
                         >
-                          <Badge 
-                            variant="outline" 
-                            className="bg-slate-50 border-slate-300 text-slate-700 hover:bg-slate-100 transition-colors text-sm"
-                          >
-                            {tech}
-                          </Badge>
-                        </motion.div>
+                          {tech}
+                        </Badge>
                       ))}
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
+                  {/* Buttons */}
                   <div className="flex gap-2">
                     <Button
+                      asChild
                       variant="outline"
                       size="sm"
-                      className="flex-1 border-purple-200 text-purple-600 hover:bg-purple-50 hover:text-purple-700 transition-colors"
+                      className="flex-1 border-purple-200 text-purple-600 hover:bg-purple-50"
                     >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </a>
                     </Button>
+
                     <Button
+                      asChild
                       size="sm"
                       className="flex-1 bg-purple-600 hover:bg-purple-700 text-white"
                     >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Live Demo
+                      </a>
                     </Button>
                   </div>
                 </CardContent>
@@ -147,51 +204,6 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Projects Overview */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <Card className="p-8 bg-gradient-to-r from-purple-50 to-blue-50 border-purple-200">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Development Philosophy
-              </h3>
-              <p className="text-slate-600 max-w-3xl mx-auto text-lg mb-6">
-                My projects reflect a commitment to clean code, user-centered design, and 
-                comprehensive testing. I focus on building scalable solutions that solve 
-                real-world problems while maintaining high standards of quality and performance.
-              </p>
-              
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-white rounded-lg">
-                  <div className="text-2xl mb-2">🚀</div>
-                  <div className="font-semibold text-slate-900">Performance</div>
-                  <div className="text-sm text-slate-600">Optimized for speed</div>
-                </div>
-                <div className="text-center p-4 bg-white rounded-lg">
-                  <div className="text-2xl mb-2">🎨</div>
-                  <div className="font-semibold text-slate-900">Design</div>
-                  <div className="text-sm text-slate-600">User-focused</div>
-                </div>
-                <div className="text-center p-4 bg-white rounded-lg">
-                  <div className="text-2xl mb-2">🔒</div>
-                  <div className="font-semibold text-slate-900">Quality</div>
-                  <div className="text-sm text-slate-600">Thoroughly tested</div>
-                </div>
-                <div className="text-center p-4 bg-white rounded-lg">
-                  <div className="text-2xl mb-2">📈</div>
-                  <div className="font-semibold text-slate-900">Scalable</div>
-                  <div className="text-sm text-slate-600">Future-ready</div>
-                </div>
-              </div>
-            </div>
-          </Card>
-        </motion.div>
       </div>
     </section>
   );
