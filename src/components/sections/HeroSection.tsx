@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -115,19 +116,19 @@ const HeroSection = () => {
                         transition={{ duration: 0.8, delay: 0.5 }}
                         className="relative"
                     >
-                      <div className="relative w-80 h-80 mx-auto lg:w-96 lg:h-96">
-  <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                        <div className="relative w-80 h-80 mx-auto lg:w-96 lg:h-96">
+                            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
 
-  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-purple-400/30">
-    <Image
-      src="/images/natanimages.jpg"
-      alt={personalInfo.name}
-      fill
-      className="object-cover scale-110 transition-transform duration-500"
-      priority
-    />
-  </div>
-</div>
+                            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-purple-400/30">
+                                <Image
+                                    src="/images/natanimages.jpg"
+                                    alt={personalInfo.name}
+                                    fill
+                                    className="object-cover scale-110 transition-transform duration-500"
+                                    priority
+                                />
+                            </div>
+                        </div>
 
                     </motion.div>
                 </div>

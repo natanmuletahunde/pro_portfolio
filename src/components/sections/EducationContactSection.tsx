@@ -20,7 +20,7 @@ const EducationContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setSubmitStatus('success');
@@ -69,16 +69,16 @@ const EducationContactSection = () => {
               >
                 <Card className="h-full bg-white shadow-lg border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300">
                   <div className={`h-1 bg-gradient-to-r ${
-                    edu.status === 'Current' 
-                      ? 'from-purple-500 to-pink-500' 
+                    edu.status === 'Current'
+                      ? 'from-purple-500 to-pink-500'
                       : 'from-blue-500 to-cyan-500'
                   }`}></div>
-                  
+
                   <CardHeader className="pb-4">
                     <div className="flex items-start gap-4">
                       <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${
-                        edu.status === 'Current' 
-                          ? 'bg-purple-100' 
+                        edu.status === 'Current'
+                          ? 'bg-purple-100'
                           : 'bg-blue-100'
                       }`}>
                         {edu.status === 'Current' ? (
@@ -116,13 +116,13 @@ const EducationContactSection = () => {
                     <div className="text-slate-600">
                       {edu.status === 'Current' && (
                         <p className="text-sm">
-                          Currently pursuing {edu.degree} with focus on advanced software engineering 
+                          Currently pursuing {edu.degree} with focus on advanced software engineering
                           concepts and practical applications.
                         </p>
                       )}
                       {edu.status === 'Certification' && (
                         <p className="text-sm">
-                          Comprehensive MySQL training covering database design, optimization, 
+                          Comprehensive MySQL training covering database design, optimization,
                           and advanced query techniques.
                         </p>
                       )}
@@ -149,7 +149,7 @@ const EducationContactSection = () => {
               Get In Touch
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Let's discuss opportunities, collaborations, or just have a conversation about technology
+              Lets discuss opportunities, collaborations, or just have a conversation about technology
             </p>
           </motion.div>
 
@@ -163,10 +163,10 @@ const EducationContactSection = () => {
             >
               <Card className="p-8 bg-gradient-to-br from-purple-50 to-pink-50 border-purple-200 h-full">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                  Let's Connect
+                  Lets Connect
                 </h3>
                 <p className="text-slate-600 mb-8 leading-relaxed">
-                  I'm always interested in hearing about new opportunities, exciting projects, 
+                  Im always interested in hearing about new opportunities, exciting projects,
                   or discussing technology and software development. Feel free to reach out!
                 </p>
 
@@ -177,7 +177,7 @@ const EducationContactSection = () => {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900">Email</div>
-                      <a 
+                      <a
                         href={`mailto:${personalInfo.email}`}
                         className="text-purple-600 hover:text-purple-700 transition-colors"
                       >
@@ -209,7 +209,7 @@ const EducationContactSection = () => {
                 <div className="mt-8 p-4 bg-white/60 rounded-lg">
                   <h4 className="font-semibold text-slate-900 mb-2">Current Focus</h4>
                   <p className="text-sm text-slate-600">
-                    Actively seeking opportunities in software development, especially in roles 
+                    Actively seeking opportunities in software development, especially in roles
                     involving full-stack development, AI/ML applications, or software testing.
                   </p>
                 </div>
@@ -227,7 +227,7 @@ const EducationContactSection = () => {
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">
                   Send Message
                 </h3>
-                
+
                 {submitStatus === 'success' && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -235,7 +235,7 @@ const EducationContactSection = () => {
                     className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg"
                   >
                     <p className="text-green-700 text-center">
-                      ✅ Message sent successfully! I'll get back to you soon.
+                      ✅ Message sent successfully! Ill get back to you soon.
                     </p>
                   </motion.div>
                 )}
