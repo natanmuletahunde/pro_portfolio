@@ -63,7 +63,7 @@ const AboutSection = () => {
           >
             <Card className="p-8 bg-white shadow-lg border-slate-200">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Hi, Im personalInfo.name
+                Hi, Im Natan Muleta
               </h3>
               <div className="space-y-4 text-slate-600">
                 <p className="text-lg leading-relaxed">
