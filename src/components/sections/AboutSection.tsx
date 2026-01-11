@@ -37,7 +37,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-6xl mx-auto px-4">
-        {/* Section Header */}
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,6 @@ const AboutSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Personal Introduction */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -63,7 +62,7 @@ const AboutSection = () => {
           >
             <Card className="p-8 bg-white shadow-lg border-slate-200">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Hi, Im Natan Muleta
+                Hi i am  Natan Muleta
               </h3>
               <div className="space-y-4 text-slate-600">
                 <p className="text-lg leading-relaxed">
