@@ -115,7 +115,6 @@ const ProjectsSection = () => {
               className="group"
             >
               <Card className="h-full bg-white shadow-lg border-slate-200 overflow-hidden hover:shadow-2xl transition-all duration-300">
-                {/* Gradient Top */}
                 <div
                   className={`h-2 bg-gradient-to-r ${getProjectColor(
                     project.type
@@ -147,7 +146,6 @@ const ProjectsSection = () => {
                     {project.description}
                   </p>
 
-                  {/* Tech Stack */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
                       <Code className="w-4 h-4" />
@@ -166,7 +164,6 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  {/* Buttons */}
                   <div className="flex gap-2">
                     <Button
                       asChild
@@ -204,6 +201,38 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* ================= VIEW MORE PROJECTS ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <h3 className="text-2xl font-semibold text-slate-900 mb-4">
+            Want to see more projects?
+          </h3>
+          <p className="text-slate-600 mb-6">
+            Explore more open-source and production-ready projects on my GitHub
+            profile.
+          </p>
+
+          <Button
+            asChild
+            size="lg"
+            className="bg-slate-900 hover:bg-slate-800 text-white"
+          >
+            <a
+              href="https://github.com/natanmuletahunde"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="w-5 h-5 mr-2" />
+              Visit My GitHub
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
